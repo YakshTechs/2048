@@ -472,6 +472,140 @@ hr {
   margin-top: 50px;
 }
 
+.site-footer {
+  position: relative;
+  margin-top: 40px;
+  background: #faf8ef;
+  color: #776e65;
+  padding: 20px;
+  border-top: 1px solid #bbada0;
+
+  .footer-wave {
+    position: absolute;
+    top: -120px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+
+  .footer-content {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .footer-section {
+    h3 {
+      color: #776e65;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 40px;
+        height: 3px;
+        background: #edc22e;
+      }
+    }
+
+    p {
+      margin: 12px 0;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #776e65;
+      text-decoration: none;
+      
+      &:hover {
+        color: #edc22e;
+      }
+    }
+
+    .separator {
+      margin: 0 10px;
+      color: #bbada0;
+    }
+  }
+
+  .social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+
+    .social-link {
+      padding: 8px 16px;
+      background: #bbada0;
+      color: #fff;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #edc22e;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background: rgba(187, 173, 160, 0.1);
+    border-top: 1px solid rgba(187, 173, 160, 0.2);
+    
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: #8f7a66;
+    }
+  }
+
+  .footer-info {
+    margin-bottom: 15px;
+    
+    p {
+      margin: 0;
+      color: #776e65;
+    }
+  }
+
+  .copyright {
+    color: #bbada0;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    .footer-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+      
+      .footer-section h3:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    .social-links {
+      justify-content: center;
+    }
+  }
+}
+
 @include smaller($mobile-threshold) {
   // Redefine variables for smaller screens
   $field-width: 280px;
